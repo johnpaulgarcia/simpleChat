@@ -120,6 +120,9 @@ export default class Chat extends React.Component{
                 />
 
               </div>
+              <div className="msgInput">
+                <TextArea rows={2} placeholder="Message"/>
+              </div>
 
 
               

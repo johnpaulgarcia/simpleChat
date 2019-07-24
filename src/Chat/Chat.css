@@ -27,7 +27,11 @@
     overflow: auto;
 }
 .msgContainer{
-    border: solid 1px #F1F1F1;
+    border-bottom: solid 1px #F1F1F1;
     height: 850px;
     overflow: auto;
+}
+.msgInput{
+    margin-top: 15px;
+    padding:5px;
 }

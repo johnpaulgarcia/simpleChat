@@ -24,7 +24,7 @@ export default class HeaderContent extends React.Component{
                 mode="horizontal"
                 style={{ lineHeight: '64px' }}  
           >
-            <Menu.Item title>
+            <Menu.Item>
               <b>BoomShot</b>
             </Menu.Item>
             <Menu.Item key="mail">
