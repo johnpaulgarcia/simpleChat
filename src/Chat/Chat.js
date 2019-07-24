@@ -2,6 +2,7 @@ import React from 'react';
 
 
 import 'antd/dist/antd.css'
+import './Chat.css'
 import { List, Avatar , Button ,Row, Col , Input} from 'antd';
 const data = [
   {
@@ -105,7 +106,7 @@ export default class Chat extends React.Component{
       return (
         <div style={{padding: '15px'}}>
           <Row type="flex" justify="space-around" align="middle">
-              <Col span={18} style={{border: 'solid 1px #F1F1F1' , height: '800px' , padding: '15px' , overflow: 'auto'}}>
+              <Col className="chatsContainer" span={18} style={{}}>
                 <List
                     itemLayout="horizontal"
                     dataSource={data}
@@ -129,7 +130,7 @@ export default class Chat extends React.Component{
               <Col span={18}>
                 <Row type="flex">
                   <Col span={22} >
-                    <Input Placeholder="Message"/>
+                    <TextArea Placeholder="Message"/>
                   </Col>
 
                   <Col span={1} style={{marginLeft: '5px' }}>

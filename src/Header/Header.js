@@ -20,6 +20,9 @@ export default class Header extends React.Component{
       return (
         <div>
           <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
+            <Menu.Item>
+              <a>BoomShot</a>
+            </Menu.Item>
             <Menu.Item key="mail">
               <Icon type="mail" />
                Chat
