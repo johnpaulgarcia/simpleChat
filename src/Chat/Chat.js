@@ -1,6 +1,5 @@
 import React from 'react';
-
-
+import { conLog } from '../actions';
 import 'antd/dist/antd.css'
 import './Chat.css'
 import { List, Avatar , Button ,Row, Col , Input} from 'antd';
