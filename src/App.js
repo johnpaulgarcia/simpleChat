@@ -17,15 +17,7 @@ const onlineUser = [
   {user: '172.43.551.3'},
   {user: '142.43.52.5'},
   {user: '172.43.52.1'},
-  {user: '132.43.52.2'},
-  {user: '172.43.52.3'},
-  {user: '152.43.522.6'},
-  {user: '172.453.52.5'},
-  {user: '172.43.52.6'},
-  {user: '172.41.552.44'},
-  {user: '172.453.52.3'},
-  {user: '172.43.122.3'},
-  
+ 
 ]
 
 
@@ -50,7 +42,11 @@ export default class App extends React.Component{
                   {
                     onlineUser.map((item , i) => 
 
-                      (<li key={i}><a href="#">{item.user}</a></li>)
+                      (<li key={i}>
+                          <a style={{textDecoration:'none' , color:'#555'}} href="#">
+                            <b>{item.user}</b>
+                          </a>
+                       </li>)
 
                       )
                   }
