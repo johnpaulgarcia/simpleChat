@@ -3,7 +3,7 @@ import 'antd/dist/antd.css'
 import { Menu, Icon } from 'antd';
 
 const { SubMenu } = Menu;
-export default class Header extends React.Component{
+export default class HeaderContent extends React.Component{
   state = {
     current: 'mail',
   };
@@ -19,9 +19,13 @@ export default class Header extends React.Component{
 
       return (
         <div>
-          <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
-            <Menu.Item>
-              <a>BoomShot</a>
+          <Menu onClick={this.handleClick} 
+                selectedKeys={[this.state.current]} 
+                mode="horizontal"
+                style={{ lineHeight: '64px' }}  
+          >
+            <Menu.Item title>
+              <b>BoomShot</b>
             </Menu.Item>
             <Menu.Item key="mail">
               <Icon type="mail" />
