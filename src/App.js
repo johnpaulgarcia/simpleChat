@@ -1,9 +1,13 @@
 import React from 'react';
 import HeaderContent from './Header/Header.js';
 import Chat from './Chat/Chat.js';
-
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import './App.css';
+// provider
+
+import {Provider} from 'react-redux';
+import {configureStore} from './store';
+
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
@@ -27,7 +31,9 @@ export default class App extends React.Component{
     render(){
 
       return (
+        
        <React.Fragment>
+        <Provider store={configureStore()}>
           <Layout>
               <Header style={{background: 'transparent' , padding: '0'}}>
                 <HeaderContent />
@@ -60,8 +66,10 @@ export default class App extends React.Component{
           </Layout>
 
        
-
+          </Provider>
        </React.Fragment> 
+
+       
       
 
       )

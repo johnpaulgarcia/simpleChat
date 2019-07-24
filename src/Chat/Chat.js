@@ -1,106 +1,28 @@
 import React from 'react';
-
-
+import { conLog,dePop } from '../actions';
 import 'antd/dist/antd.css'
 import './Chat.css'
 import { List, Avatar , Button ,Row, Col , Input} from 'antd';
-const data = [
-  {
-    title: '172.60.60.180',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  {
-    title: '176.65.50.8',
-    description: "Lorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfasLorem ipsdfas"
-  },
-  
-];
+import {connect} from 'react-redux';
+import io from 'socket.io-client'
+const socket = io('http://localhost:3001');
+class Chat extends React.Component<Props,State>{
 
+  state = {
 
+  }
+  componentDidMount(){
+     this.props.dispatch(dePop());
+     socket.on('message', () =>
+      this.props.dispatch(conLog())
+    );
+  }
 
-export default class Chat extends React.Component{
-
-
-
-
-
+  submit = (e) => {
+      e.preventDefault();
+      console.log('youre here')
+      socket.emit('message');
+  }
     render(){
       const { TextArea } = Input;
       return (
@@ -108,7 +30,7 @@ export default class Chat extends React.Component{
               <div className="msgContainer">
                 <List
                     itemLayout="horizontal"
-                    dataSource={data}
+                    dataSource={this.props.data}
                     renderItem={item => (
                       <List.Item style={{paddingLeft: '15px'}} actions={[<a>Delete</a>]}>
                         <List.Item.Meta
@@ -122,8 +44,9 @@ export default class Chat extends React.Component{
 
               </div>
               <div className="msgInput">
-                <form>
-                <Input type="text" placeholder="Message"/>
+                <form action="#" onSubmit={this.submit}>
+                  {this.props.message}
+                 <Input type="text" placeholder="Message"/>
                 </form>
               </div>
 
@@ -155,4 +78,13 @@ export default class Chat extends React.Component{
 
 }
 
+const convertToProps = (state) => {
+    return {
+        message: state.message,
+        data: state.data
+    }
+}
+
+
+export default connect(convertToProps)(Chat);
 
