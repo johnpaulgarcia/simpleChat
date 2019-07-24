@@ -1,7 +1,4 @@
-const data = [
-	
-  
-];
+const data = require( './MOCK_DATA.json');
 
 module.exports = (state='',action) => {
 	switch(action.type){

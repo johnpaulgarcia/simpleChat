@@ -5,13 +5,22 @@ import './Chat.css'
 import { List, Avatar , Button ,Row, Col , Input} from 'antd';
 import {connect} from 'react-redux';
 import io from 'socket.io-client'
+
 const socket = io('http://localhost:3001');
-class Chat extends React.Component<Props,State>{
+
+
+class Chat extends React.Component{
 
   state = {
-
+      
   }
   componentDidMount(){
+
+    let msgContainerList = document.querySelector("#scrolldiv");
+    msgContainerList.scrollTop = msgContainerList.scrollHeight;
+
+    console.log(msgContainerList.scrollTop);
+
      this.props.dispatch(dePop());
      socket.on('message', () =>
       this.props.dispatch(conLog())
@@ -25,18 +34,20 @@ class Chat extends React.Component<Props,State>{
       socket.emit('message',user);
   }
     render(){
+    
       const { TextArea } = Input;
+      
       return (
         <div>
-              <div className="msgContainer">
+              <div className="msgContainer" id="scrolldiv">
                 <List
                     itemLayout="horizontal"
                     dataSource={this.props.data}
                     renderItem={item => (
                       <List.Item style={{paddingLeft: '15px'}} actions={[<a>Delete</a>]}>
                         <List.Item.Meta
-                          avatar={<Avatar src="https://picsum.photos/200/300" />}
-                          title={<a href="https://ant.design">{item.title}</a>}
+                          avatar={<Avatar src={item.avatar} />}
+                          title={<a href="https://ant.design">{item.first_name} {item.last_name}</a>}
                           description={item.description}
                         />
                       </List.Item>
@@ -47,7 +58,7 @@ class Chat extends React.Component<Props,State>{
               <div className="msgInput">
                 <form action="#" onSubmit={this.submit}>
                   {this.props.message}
-                 <Input type="text" placeholder="Message"/>
+                 <Input type="text" placeholder="Message" size="large"/>
                 </form>
               </div>
 

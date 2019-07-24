@@ -1,11 +1,12 @@
 
 .sider{
+
   overflow: auto;
   background: #FFF;
   border-right: solid 1px #f1f1f1;
   margin-top: 2px;
-  min-height: 92vh;
- 
+  height: 92vh;
+  
 }
 
 .sideTitle{
@@ -16,6 +17,17 @@
 .onlineList{
   margin-left: -5px;
   font-size:16px;
+  list-style: none;
+}
+.onlineList li::before{
+  content: "\2022";
+  color: green;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+  font-size:20px;
+  
 }
 .onlineList li{
   padding:3px;
