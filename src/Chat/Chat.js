@@ -112,6 +112,7 @@ export default class Chat extends React.Component{
                     renderItem={item => (
                       <List.Item style={{paddingLeft: '15px'}} actions={[<a>Delete</a>]}>
                         <List.Item.Meta
+                          avatar={<Avatar src="https://picsum.photos/200/300" />}
                           title={<a href="https://ant.design">{item.title}</a>}
                           description={item.description}
                         />
@@ -121,7 +122,9 @@ export default class Chat extends React.Component{
 
               </div>
               <div className="msgInput">
-                <TextArea rows={2} placeholder="Message"/>
+                <form>
+                <Input type="text" placeholder="Message"/>
+                </form>
               </div>
 
 
