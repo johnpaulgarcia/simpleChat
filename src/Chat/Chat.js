@@ -21,7 +21,8 @@ class Chat extends React.Component<Props,State>{
   submit = (e) => {
       e.preventDefault();
       console.log('youre here')
-      socket.emit('message');
+      let user = "ben";
+      socket.emit('message',user);
   }
     render(){
       const { TextArea } = Input;
