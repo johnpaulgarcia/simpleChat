@@ -22,16 +22,16 @@
 
 .chatsContainer{
     border: solid 1px #F1F1F1;
-    height: 800px;
+    height: 700px;
     padding:15px;
     overflow: auto;
 }
 .msgContainer{
     border-bottom: solid 1px #F1F1F1;
-    height: 850px;
+    height: 780px;
     overflow: auto;
    box-shadow: inset 0px 11px 8px -7px #CCC,
-               inset 0px -11px 8px -7px #CCC; 
+               inset 0px -11px 8px -10px #CCC; 
 }
 .msgInput{
     margin-top: 15px;
