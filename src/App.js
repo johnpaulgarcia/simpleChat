@@ -9,14 +9,15 @@ const { Header, Content, Sider } = Layout;
 
 
 const onlineUser = [
-  {user: '172.43.52.5'},
-  {user: '172.43.52.2'},
-  {user: '172.43.52.5'},
-  {user: '172.43.542.0'},
-  {user: '172.43.552.6'},
-  {user: '172.43.551.3'},
-  {user: '142.43.52.5'},
-  {user: '172.43.52.1'},
+  {user: '172.43.52.5' , read: false},
+
+  {user: '172.43.52.2', read: false},
+  {user: '172.43.52.5', read: true},
+  {user: '172.43.542.0', read: false},
+  {user: '172.43.552.6', read: true},
+  {user: '172.43.551.3', read: false},
+  {user: '142.43.52.5', read: false},
+  {user: '172.43.52.1', read: true},
  
 ]
 

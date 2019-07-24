@@ -24,7 +24,7 @@ export default class HeaderContent extends React.Component{
                 mode="horizontal"
                 style={{ lineHeight: '64px' }}  
           >
-            <Menu.Item>
+            <Menu.Item >
               <b>BoomShot</b>
             </Menu.Item>
             <Menu.Item key="mail">
@@ -32,7 +32,7 @@ export default class HeaderContent extends React.Component{
                Chat
             </Menu.Item>
            
-            <Menu.Item key="alipay">
+            <Menu.Item key="alipay" disabled>
               
                 Settings
             </Menu.Item>
