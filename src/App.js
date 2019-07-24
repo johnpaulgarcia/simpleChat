@@ -11,20 +11,7 @@ import {configureStore} from './store';
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
-
-const onlineUser = [
-  {user: '172.43.52.5' , read: false},
-
-  {user: '172.43.52.2', read: false},
-  {user: '172.43.52.5', read: true},
-  {user: '172.43.542.0', read: false},
-  {user: '172.43.552.6', read: true},
-  {user: '172.43.551.3', read: false},
-  {user: '142.43.52.5', read: false},
-  {user: '172.43.52.1', read: true},
- 
-]
-
+const data = require('./reducers/MOCK_DATA.json');
 
 export default class App extends React.Component{
 
@@ -47,11 +34,11 @@ export default class App extends React.Component{
                 <h4 className="sideTitle" >Online </h4>
                 <ul className="onlineList">
                   {
-                    onlineUser.map((item , i) => 
+                    data.map((item , i) => 
 
                       (<li key={i}>
                           <a style={{textDecoration:'none' , color:'#555'}} href="#">
-                            <b>{item.user}</b>
+                            <b>{item.first_name}</b>
                           </a>
                        </li>)
 
